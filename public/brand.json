@@ -1,0 +1,33 @@
+[
+      {
+          "id": 1,
+          "image": "https://i.ibb.co/3CF9y5c/apple-img.jpg",
+          "name": "Apple"
+      },
+      {
+          "id": 2,
+          "image": "dhttps://i.ibb.co/3CF9y5c/apple-img.jpg",
+          "name": "Laptop Pro"
+      },
+      {
+          "id": 3,
+          "image": "https://i.ibb.co/3CF9y5c/apple-img.jpg",
+          "name": "Digital Camera 2000"
+      },
+      {
+          "id": 4,
+          "image": "https://i.ibb.co/3CF9y5c/apple-img.jpg",
+          "name": "Smart Speaker Mini"
+      },
+      {
+          "id": 5,
+          "image": "https://i.ibb.co/3CF9y5c/apple-img.jpg",
+          "name": "Tablet TabMaster"
+      },
+      {
+          "id": 6,
+          "image": "https://i.ibb.co/3CF9y5c/apple-img.jpg",
+          "name": "Gaming Console Elite"
+      }
+  ]
+  
