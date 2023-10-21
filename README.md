@@ -16,4 +16,4 @@ The Client side live link:
 
  - step-4 :Energy Efficiency and Sustainability: Electronics play a crucial role in energy conservation and sustainability efforts. Devices and systems are designed to be more energy-efficient, reducing environmental impact and promoting a greener future.
 
- - step-5 : Communication and Connectivity: The facilities of electronics seamless communication and connectivity, allowing people to stay connected across the globe. This has transformed how we share information, collaborate, and access resources.
+ - step-5 : Resource Planning: The resource access needed, including hardware, software, skilled personnel, and budget requirements. Adequate resource allocation is critical for the successful execution of technology and electronics projects.
