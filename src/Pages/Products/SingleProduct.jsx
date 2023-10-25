@@ -41,7 +41,7 @@ const SingleProduct = () => {
         // Call your function to add to the cart here
         console.log(cartItem);
         
-        fetch(`http://localhost:5000/carts`, {
+        fetch(`https://tech-and-electro.vercel.app/carts`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

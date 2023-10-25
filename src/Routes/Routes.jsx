@@ -40,19 +40,19 @@ const routes =createBrowserRouter([
                   
                   {
                         path:"/update-products/:id",
-                        loader: async({params}) => fetch(`http://localhost:5000/product/${params.id}`),
+                        loader: async({params}) => fetch(`https://tech-and-electro.vercel.app/product/${params.id}`),
                         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>
                   },
-                  
+                                                
                   {
                         path:"/category/:id",
-                        loader: async({params}) => fetch(`http://localhost:5000/category/${params.id}`),
+                        loader: async({params}) => fetch(` https://tech-and-electro.vercel.app/category/${params.id}`),
                         element: <SingleCategory></SingleCategory>
                   },
                   
                   {
                         path:"/product/:id",
-                        loader: async({params}) => fetch(`http://localhost:5000/product/${params.id}`),
+                        loader: async({params}) => fetch(` https://tech-and-electro.vercel.app/product/${params.id}`),
                         element: <SingleProduct></SingleProduct>,
                   },
                   {

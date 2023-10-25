@@ -9,7 +9,7 @@ const SingleCategory = () => {
     const { _id, title, slider_image } = category;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/category-products/${_id}`)
+        fetch(`https://tech-and-electro.vercel.app/category-products/${_id}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

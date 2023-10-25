@@ -30,7 +30,7 @@ const ProductCards = ({ product }) => {
 
 
   return (
-    <div className='card bg-base-100 shadow-xl p-2'>
+    <div className='card bg-base-100 shadow-xl p-2' data-aos="zoom-in-right">
       <img className='h-[300px]' src={image} alt="Product Image" />
       <div className='p-2'>
         <h2 className='mb-2'>{name}</h2>

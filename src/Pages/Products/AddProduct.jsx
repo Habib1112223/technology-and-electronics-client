@@ -41,7 +41,7 @@ const AddProduct = () => {
 
 
 
-                    fetch(`http://localhost:5000/product`, {
+                    fetch(`https://tech-and-electro.vercel.app/product`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -85,7 +85,7 @@ const AddProduct = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://tech-and-electro.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])

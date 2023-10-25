@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData} from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
 const UpdateProduct = () => {
-    const product = useLoaderData();
-    const [selectedImage, setSelectedImage] = useState(product.image);
-    const [categories, setCategories] = useState([])
+  const product = useLoaderData();
+  const [selectedImage, setSelectedImage] = useState(product.image);
+  const [categories, setCategories] = useState([])
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -65,7 +65,7 @@ const UpdateProduct = () => {
   //                           }
   //                       })
 
-                   
+
   //               }
   //           })
   //           .catch(error => {
@@ -76,55 +76,55 @@ const UpdateProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const form = e.target;
     const name = form.name.value;
     const description = form.description.value;
     const price = form.price.value;
     const category = form.categoryId.value;
     const rating = form.rating.value;
-    
+
     const image = form.image.files[0];
-  
+
     // Check if a new image is uploaded
     if (image) {
       const formData = new FormData();
       formData.append('image', image);
-  
+
       const imgbbUrl = `https://api.imgbb.com/1/upload?key=4c3e6074504856ce38dceca8159f65af`;
-      
+
       try {
         const imgResponse = await fetch(imgbbUrl, {
           method: 'POST',
           body: formData,
         });
-  
+
         if (imgResponse.ok) {
           const imgData = await imgResponse.json();
           if (imgData.success) {
             const newProduct = {
               name,
-              image: imgData.data.url, 
+              image: imgData.data.url,
               price,
               description,
               category,
               rating,
             };
-  
-            
-            const newProductResponse = await fetch(`http://localhost:5000/product/${product._id}`, {
+
+
+            const newProductResponse = await fetch(`https://tech-and-electro.vercel.app/product/${product._id}`, {
               method: 'PUT',
               headers: {
                 'content-type': 'application/json',
               },
               body: JSON.stringify(newProduct),
             });
-  
+
             if (newProductResponse.ok) {
               const data = await newProductResponse.json();
               if (data.acknowledged) {
-                console.log('Product added successfully');
-                Swal.fire('Added New Product', 'Product added successfully', 'success');
+                console.log('Product Updated successfully');
+                Swal.fire('Updated Product', 'Product Updated successfully', 'success');
                 window.location.reload();
               }
             }
@@ -134,8 +134,8 @@ const UpdateProduct = () => {
         console.error('Error uploading image to ImgBB:', error);
       }
     } else {
-      const existingImage = selectedImage; 
-  
+      const existingImage = selectedImage;
+
       const existingProduct = {
         name,
         image: existingImage,
@@ -144,22 +144,22 @@ const UpdateProduct = () => {
         category,
         rating,
       };
-  
+
       // Send a POST request to add the new product
       try {
-        const existingProductResponse = await fetch(`http://localhost:5000/product/${product._id}`, {
+        const existingProductResponse = await fetch(`https://tech-and-electro.vercel.app/product/${product._id}`, {
           method: 'PUT',
           headers: {
             'content-type': 'application/json',
           },
           body: JSON.stringify(existingProduct),
         });
-  
+
         if (existingProductResponse.ok) {
           const data = await existingProductResponse.json();
           if (data.acknowledged) {
-            console.log('Product added successfully');
-            Swal.fire('Added New Product', 'Product added successfully', 'success');
+            console.log('Product Updated successfully');
+            Swal.fire('Updated Product', 'Product Updated successfully', 'success');
             window.location.reload();
           }
         }
@@ -182,10 +182,10 @@ const UpdateProduct = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:5000/categories')
-        .then(res => res.json())
-        .then(data => setCategories(data))
-    }, [])
+    fetch('https://tech-and-electro.vercel.app/categories')
+      .then(res => res.json())
+      .then(data => setCategories(data))
+  }, [])
 
 
 
@@ -246,15 +246,15 @@ const UpdateProduct = () => {
 
           {/* Category */}
           <div className="mb-4">
-                        <label htmlFor="category" className="block text-gray-700">Category:</label>
-                        <select name='categoryId' className='w-full border rounded px-3 py-2'>
-                            {
-                                categories.map(category => {
-                                    return <option key={category._id} value={category._id}>{category.title}</option>
-                                })
-                            }
-                        </select>
-                    </div>
+            <label htmlFor="category" className="block text-gray-700">Category:</label>
+            <select name='categoryId' className='w-full border rounded px-3 py-2'>
+              {
+                categories.map(category => {
+                  return <option key={category._id} value={category._id}>{category.title}</option>
+                })
+              }
+            </select>
+          </div>
 
           <div className="mb-4">
             <label htmlFor="rating" className="block text-gray-700">Rating:</label>
@@ -286,7 +286,7 @@ const UpdateProduct = () => {
               {selectedImage ? (
                 <img src={selectedImage} alt="Product" className="max-h-48 max-w-full" />
               ) : (
-                <span className="text-gray-600 text-xl">Upload Product Image</span>
+                <span className="text-gray-600 text-xl">Submit Button</span>
               )}
             </label>
           </div>

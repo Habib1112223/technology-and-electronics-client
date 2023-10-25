@@ -1,6 +1,6 @@
 # Technology and Electronics 
 
-The Client side live link: 
+The Client side live link: https://technology-and-electroni-a72ab.web.app/
 
 
 

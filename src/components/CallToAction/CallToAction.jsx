@@ -3,7 +3,7 @@ import React from "react";
 const CallToAction = () => {
   return (
     <>
-      <section className="w-full">
+      <section className="w-full"data-aos="zoom-in-left">
           <div
             className={`relative z-10 overflow-hidden rounded bg-primary py-12 px-8 md:p-[70px]`}
           >
